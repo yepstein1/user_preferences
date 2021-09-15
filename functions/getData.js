@@ -2,7 +2,7 @@ const {Pool} = require('pg');
 
 require('dotenv').config()
 //export
- async function getData()
+  exports.handler = async  function (context)
     {
 
 
@@ -16,7 +16,10 @@ require('dotenv').config()
         console.log(process.env.DB_PASS)
         try{
             let   res=await pool.query('select * from get_data')
-            return   res.rows
+            return  {
+                statusCode : 200,
+                body : JSON.stringify(res.rows)
+            }
         }catch(error)
         {
             console.log(error)
@@ -28,7 +31,7 @@ require('dotenv').config()
 
 
     }
-    getData().then(r => console.log(r ) )
+   // getData().then(r => console.log(r ) )
 
 
 
