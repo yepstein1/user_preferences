@@ -7,11 +7,11 @@ require('dotenv').config()
 
 
         const pool = new Pool({
-            user: process.env.DB_USER,
-            host: process.env.DB_HOST,
-            database: process.env.DB_USER ,
-            password:process.env.DB_PASS ,
-            port:5432,
+            user: process.env.REACT_APP_DB_USER,
+            host: process.env.REACT_APP_DB_HOST,
+            database: process.env.REACT_APP_DB_USER,
+            password: process.env.REACT_APP_DB_PASS,
+            port: 5432,
         })
         console.log(process.env.DB_PASS)
         try{

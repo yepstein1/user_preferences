@@ -11,11 +11,11 @@ let person_id = Math.floor((Math.random() * 100) + 1);
    let color_id =5
 
     const pool = new Pool({
-        user: process.env.DB_USER,
-        host: process.env.DB_HOST,
-        database: process.env.DB_USER ,
-        password:process.env.DB_PASS ,
-        port:5432,
+        user: process.env.REACT_APP_DB_USER,
+        host: process.env.REACT_APP_DB_HOST,
+        database: process.env.REACT_APP_DB_USER,
+        password: process.env.REACT_APP_DB_PASS,
+        port: 5432,
     })
 //todo make up a color id lookup table if neccessary
 try{
