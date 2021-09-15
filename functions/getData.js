@@ -1,19 +1,16 @@
 const {Pool} = require('pg');
 
 require('dotenv').config()
-//export
-  exports.handler = async  function (context)
-    {
+exports.handler = async function () {
 
+    const pool = new Pool({
+        user: process.env.REACT_APP_DB_USER,
+        host: process.env.REACT_APP_DB_HOST,
+        database: process.env.REACT_APP_DB_USER,
+        password: process.env.REACT_APP_DB_PASS,
+        port: 5432,
+    })
 
-        const pool = new Pool({
-            user: process.env.REACT_APP_DB_USER,
-            host: process.env.REACT_APP_DB_HOST,
-            database: process.env.REACT_APP_DB_USER,
-            password: process.env.REACT_APP_DB_PASS,
-            port: 5432,
-        })
-        console.log(process.env.DB_PASS)
         try{
             let   res=await pool.query('select * from get_data')
             return  {
@@ -25,13 +22,8 @@ require('dotenv').config()
             console.log(error)
         }
 
-
-
-
-
-
     }
-   // getData().then(r => console.log(r ) )
+
 
 
 

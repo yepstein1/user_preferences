@@ -1,6 +1,7 @@
-import {TextField}  from '@material-ui/core';
+import {TextField} from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import React, {useState} from "react";
+
 export function AddDataForm()
 
 {
@@ -13,7 +14,7 @@ export function AddDataForm()
          age:age
 
      }
-     console.log({payload})
+
      await fetch("/.netlify/functions/sendData", {
          method: 'POST',
          headers:
@@ -26,16 +27,12 @@ export function AddDataForm()
 
      })
  }
-
-
     const [firstName, setFirstName]= useState("")
     const [lastName, setLastName]= useState("")
     const [color, setColor]= useState("")
     const [age, setAge]= useState("")
 
-
-
-
+//todo let user know insert was successful
 
     return <div>
 
